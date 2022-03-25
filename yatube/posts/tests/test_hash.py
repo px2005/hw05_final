@@ -1,6 +1,6 @@
 from django.test import Client, TestCase
 
-from posts.models import Post, Group, User, Follow
+from posts.models import Post, Group, User
 from posts.tests import constants_tests as const
 
 

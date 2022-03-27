@@ -70,7 +70,6 @@ def post_detail(request, post_id):
     context = {
         'posts_author': posts_author,
         'posts': posts,
-        'comments': comments,
         'title': 'Пост ' + posts.text[:30],
         'form': form,
     }

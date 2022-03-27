@@ -94,3 +94,7 @@ class Follow(models.Model):
 
     class Meta:
         db_table = 'Follow'
+        unique_together = ['user', 'author']
+        constraints = [
+            models.CheckConstraint(check=~models.Q(user=models.F('author')),
+                                   name='user_is_not_author')]

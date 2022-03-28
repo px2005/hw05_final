@@ -65,10 +65,12 @@ def profile(request, username):
 def post_detail(request, post_id):
     posts = Post.objects.get(id=post_id)
     posts_author = Post.objects.filter(author__username=posts.author)
+    comments = posts.comments.all()
     form = CommentForm(request.POST or None)
     context = {
         'posts_author': posts_author,
         'posts': posts,
+        'comments': comments,
         'title': 'Пост ' + posts.text[:30],
         'form': form,
     }
